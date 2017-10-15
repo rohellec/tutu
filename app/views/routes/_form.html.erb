@@ -1,0 +1,12 @@
+<%= form_for @route do |f| %>
+  <%= render "common/errors", resource: @route %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -5,6 +5,8 @@ class CreateTickets < ActiveRecord::Migration[5.1]
       t.references :user,  foreign_key: true
       t.references :base_station,  foreign_key: { to_table: :railway_stations }
       t.references :final_station, foreign_key: { to_table: :railway_stations }
+
+      t.timestamps
     end
   end
 end

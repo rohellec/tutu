@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(version: 20171012190001) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "railway_stations_routes", id: false, force: :cascade do |t|
-    t.bigint "railway_station_id", null: false
-    t.bigint "route_id", null: false
+  create_table "railway_stations_routes", force: :cascade do |t|
+    t.bigint "railway_station_id"
+    t.bigint "route_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["railway_station_id"], name: "index_railway_stations_routes_on_railway_station_id"
     t.index ["route_id"], name: "index_railway_stations_routes_on_route_id"
   end
@@ -39,6 +41,8 @@ ActiveRecord::Schema.define(version: 20171012190001) do
     t.bigint "user_id"
     t.bigint "base_station_id"
     t.bigint "final_station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["base_station_id"], name: "index_tickets_on_base_station_id"
     t.index ["final_station_id"], name: "index_tickets_on_final_station_id"
     t.index ["train_id"], name: "index_tickets_on_train_id"
@@ -56,6 +60,8 @@ ActiveRecord::Schema.define(version: 20171012190001) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "tickets", "railway_stations", column: "base_station_id"

@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20171012190001) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "railway_stations_routes", "railway_stations"
+  add_foreign_key "railway_stations_routes", "routes"
   add_foreign_key "tickets", "railway_stations", column: "base_station_id"
   add_foreign_key "tickets", "railway_stations", column: "final_station_id"
   add_foreign_key "tickets", "trains"

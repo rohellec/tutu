@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20171016190432) do
   create_table "wagons", force: :cascade do |t|
     t.bigint "train_id"
     t.string "wagon_type"
-    t.integer "bottom_places"
-    t.integer "upper_places"
+    t.integer "bottom_places", default: 0
+    t.integer "upper_places", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["train_id"], name: "index_wagons_on_train_id"

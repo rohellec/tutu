@@ -14,5 +14,35 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Open-plan wagons:</strong>
+  <%= @train.wagons.open_plan.size %>
+</p>
+
+<p>
+  <strong>Open-plan bottom places:</strong>
+  <%= @train.open_plan_bottom_places %>
+</p>
+
+<p>
+  <strong>Open-plan upper places:</strong>
+  <%= @train.open_plan_upper_places %>
+</p>
+
+<p>
+  <strong>Coupe wagons:</strong>
+  <%= @train.wagons.coupe.size %>
+</p>
+
+<p>
+  <strong>Coupe bottom places:</strong>
+  <%= @train.coupe_bottom_places %>
+</p>
+
+<p>
+  <strong>Coupe upper places:</strong>
+  <%= @train.coupe_upper_places %>
+</p>
+
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>

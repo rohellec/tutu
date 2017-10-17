@@ -2,18 +2,26 @@
 
 <h1>Trains</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% if @trains.any? %>
 
-  <tbody>
-    <%= render @trains %>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render @trains %>
+    </tbody>
+  </table>
+
+<% else %>
+
+  <p>There are no trains added</p>
+
+<% end %>
 
 <br>
 

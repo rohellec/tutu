@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wagon_type: MyString
+  train: one
+  bottom_plces: 1
+  upper_places: 1
+
+two:
+  wagon_type: MyString
+  train: two
+  bottom_plces: 1
+  upper_places: 1

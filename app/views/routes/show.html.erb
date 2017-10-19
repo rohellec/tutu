@@ -14,7 +14,7 @@
     No stations were added to this route
   <% else %>
     <ul>
-      <% @route.railway_stations.each do |station| %>
+      <% @route.railway_stations.route_order.each do |station| %>
         <li>№ <%= station.title %></li>
       <% end %>
     </ul>

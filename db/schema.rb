@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019084811) do
+ActiveRecord::Schema.define(version: 20171019211814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20171019084811) do
     t.integer "side_upper_places"
     t.integer "seat_places"
     t.string "type"
+    t.integer "ordinal"
     t.index ["train_id"], name: "index_wagons_on_train_id"
   end
 

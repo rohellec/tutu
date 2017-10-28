@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Wagon №<%= @wagon.ordinal %></strong>
+</p>
+
+<p>
   <strong>Train:</strong>
   <%= @wagon.train.number %>
 </p>
@@ -10,15 +14,7 @@
   <%= @wagon.wagon_type %>
 </p>
 
-<p>
-  <strong>Bottom places:</strong>
-  <%= @wagon.bottom_places %>
-</p>
-
-<p>
-  <strong>Upper places:</strong>
-  <%= @wagon.upper_places %>
-</p>
+<%= render "wagons/types/#{@wagon.type.underscore}", wagon: @wagon %>
 
 <%= link_to 'Edit', edit_wagon_path(@wagon) %> |
 <%= link_to 'Back', wagons_path %>

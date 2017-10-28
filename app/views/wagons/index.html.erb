@@ -9,14 +9,17 @@
       <tr>
         <th>Train</th>
         <th>Type</th>
-        <th>Bottom places</th>
-        <th>Upper places</th>
+        <th>Bottom</th>
+        <th>Upper</th>
+        <th>Side bottom</th>
+        <th>Side upper</th>
+        <th>Seats</th>
         <th colspan="3"></th>
       </tr>
     </thead>
 
     <tbody>
-      <%= render @wagons %>
+      <%= render partial: "wagon", collection: @wagons %>
     </tbody>
   </table>
 

@@ -26,7 +26,7 @@ class WagonsController < ApplicationController
 
   def update
     if @wagon.update(wagon_params)
-      redirect_to @wagon, notice: 'Wagon was successfully updated.'
+      redirect_to wagon_path(@wagon), notice: 'Wagon was successfully updated.'
     else
       render :edit
     end
@@ -44,6 +44,7 @@ class WagonsController < ApplicationController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:train_id, :bottom_places, :upper_places, :wagon_type)
+    params.require(:wagon).permit(:train_id, :wagon_type, :bottom_places, :upper_places,
+                                  :side_bottom_places, :side_upper_places, :seat_places)
   end
 end

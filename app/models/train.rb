@@ -4,4 +4,8 @@ class Train < ApplicationRecord
 
   has_many :tickets
   has_many :wagons
+
+  def sorted_wagons
+    wagons.sorted(head_direction)
+  end
 end

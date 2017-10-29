@@ -23,7 +23,7 @@
     This train has no wagons added
   <% else %>
     <ul>
-      <% @train.wagons.each do |wagon| %>
+      <% @train.sorted_wagons.each do |wagon| %>
         <li><%= link_to "№ #{wagon.ordinal}", wagon_path(wagon) %></li>
       <% end %>
     </ul>

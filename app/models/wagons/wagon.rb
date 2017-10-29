@@ -1,6 +1,7 @@
 class Wagon < ApplicationRecord
   TYPES = %w[Sitting Econom Coupe Luxe].freeze
 
+  scope :sorted, ->(asc) { order(ordinal: (asc ? :asc : :desc)) }
   belongs_to :train, optional: true
 
   validates :ordinal, uniqueness: { scope: :train_id }

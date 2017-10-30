@@ -8,8 +8,11 @@ class Wagon < ApplicationRecord
   validates :train_id, presence: true
   validates :wagon_type, inclusion: { in: TYPES }
 
-  before_validation :set_type
   before_save :set_ordinal, if: ->(wagon) { wagon.changes["train_id"] }
+
+  def with_exact_type
+    becomes!(TYPES_CLASSES[wagon_type].constantize)
+  end
 
   private
 
@@ -22,9 +25,5 @@ class Wagon < ApplicationRecord
 
   def set_ordinal
     self.ordinal = train.wagons.any? ? train.wagons.maximum(:ordinal) + 1 : 1
-  end
-
-  def set_type
-    self.type = TYPES_CLASSES[wagon_type]
   end
 end

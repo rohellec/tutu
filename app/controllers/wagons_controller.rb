@@ -16,7 +16,7 @@ class WagonsController < ApplicationController
   end
 
   def create
-    @wagon = Wagon.new(wagon_params)
+    @wagon = Wagon.new(wagon_params).with_exact_type
     if @wagon.save
       redirect_to @wagon, notice: 'Wagon was successfully created.'
     else

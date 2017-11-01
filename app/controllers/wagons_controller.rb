@@ -16,9 +16,9 @@ class WagonsController < ApplicationController
   end
 
   def create
-    @wagon = Wagon.new(wagon_params).with_exact_type
+    @wagon = Wagon.new(wagon_params)
     if @wagon.save
-      redirect_to @wagon, notice: 'Wagon was successfully created.'
+      redirect_to wagon_path(@wagon), notice: 'Wagon was successfully created.'
     else
       render :new
     end
@@ -44,7 +44,7 @@ class WagonsController < ApplicationController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:train_id, :wagon_type, :bottom_places, :upper_places,
+    params.require(:wagon).permit(:type, :train_id, :bottom_places, :upper_places,
                                   :side_bottom_places, :side_upper_places, :seat_places)
   end
 end

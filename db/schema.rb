@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 20171029071154) do
 
   create_table "wagons", force: :cascade do |t|
     t.bigint "train_id"
-    t.string "wagon_type"
     t.integer "bottom_places"
     t.integer "upper_places"
     t.datetime "created_at", null: false

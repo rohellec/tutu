@@ -15,7 +15,7 @@
   <% else %>
     <ul>
       <% @route.railway_stations.route_order.each do |station| %>
-        <li>№ <%= station.title %></li>
+        <li><%= station.title %></li>
       <% end %>
     </ul>
   <% end %>

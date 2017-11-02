@@ -3,21 +3,14 @@ class Train < ApplicationRecord
   belongs_to :route, optional: true
 
   has_many :tickets
-  has_many :wagons
+  has_many :wagons, dependent: :destroy
 
-  def coupe_bottom_places
-    wagons.coupe.sum(:bottom_places)
+  def sorted_wagons
+    wagons.sorted(head_direction)
   end
 
-  def coupe_upper_places
-    wagons.coupe.sum(:upper_places)
-  end
-
-  def open_plan_bottom_places
-    wagons.open_plan.sum(:bottom_places)
-  end
-
-  def open_plan_upper_places
-    wagons.open_plan.sum(:upper_places)
+  def count_places(wagon_type, place_type)
+    wagon_type = "#{wagon_type.to_s.capitalize}Wagon"
+    wagons.where(type: wagon_type).sum("#{place_type}_places")
   end
 end

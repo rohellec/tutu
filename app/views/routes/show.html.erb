@@ -10,14 +10,18 @@
 </p>
 
 <p>
-  <% if @route.railway_stations.empty? %>
-    No stations were added to this route
-  <% else %>
+  <% if @route.railway_stations.any? %>
+
     <ul>
-      <% @route.railway_stations.each do |station| %>
-        <li>№ <%= station.title %></li>
+      <% @route.railway_stations.route_order.each do |station| %>
+        <li><%= station.title %></li>
       <% end %>
     </ul>
+
+  <% else %>
+
+    No stations were added to this route
+
   <% end %>
 </p>
 
@@ -26,14 +30,18 @@
 </p>
 
 <p>
-  <% if @route.trains.empty? %>
-    No trains were assigned to this route
-  <% else %>
+  <% if @route.trains.any? %>
+
     <ul>
       <% @route.trains.each do |train| %>
         <li>№ <%= train.number %></li>
       <% end %>
     </ul>
+
+  <% else %>
+
+    No trains were assigned to this route
+
   <% end %>
 </p>
 

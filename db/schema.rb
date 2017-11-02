@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20171029071154) do
     t.datetime "updated_at", null: false
     t.bigint "route_id"
     t.bigint "current_station_id"
-    t.boolean "head_direction"
+    t.boolean "head_direction", default: true, null: false
     t.index ["current_station_id"], name: "index_trains_on_current_station_id"
     t.index ["route_id"], name: "index_trains_on_route_id"
   end

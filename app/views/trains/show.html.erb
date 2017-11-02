@@ -7,6 +7,7 @@
 
 <p>
   <strong>Route:</strong>
+
   <% if @train.route.present? %>
     <%= @train.route.title %>
   <% else %>
@@ -15,15 +16,22 @@
 </p>
 
 <p>
-  <% if @train.wagons.empty? %>
-    This train has no wagons added
-  <% else %>
-    <strong>Wagons:</strong>
+  <strong>Wagons:</strong>
+</p>
+
+<p>
+  <% if @train.wagons.any? %>
+
     <ul>
       <% @train.sorted_wagons.each do |wagon| %>
         <li><%= link_to "№ #{wagon.ordinal}", wagon_path(wagon) %></li>
       <% end %>
     </ul>
+
+  <% else %>
+
+    This train has no wagons added
+
   <% end %>
 </p>
 

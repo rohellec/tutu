@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171029071154) do
     t.bigint "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "station_order"
+    t.integer "position"
     t.index ["railway_station_id"], name: "index_railway_stations_routes_on_railway_station_id"
     t.index ["route_id"], name: "index_railway_stations_routes_on_route_id"
   end

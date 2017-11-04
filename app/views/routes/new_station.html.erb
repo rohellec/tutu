@@ -1,0 +1,19 @@
+<h1>New railway station on route</h1>
+
+<%= form_tag add_station_route_path(@route), method: :post do %>
+  <div class="field">
+    <%= label_tag  :station %>
+    <%= select_tag :station, options_from_collection_for_select(@stations, :id, :title) %>
+  </div>
+
+  <div class="field">
+    <%= label_tag        :position %>
+    <%= number_field_tag :position %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Create" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', route_path(@route) %>

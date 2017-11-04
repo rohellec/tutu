@@ -7,9 +7,7 @@
 
 <p>
   <strong>Stations:</strong>
-</p>
 
-<p>
   <% if @route.railway_stations.any? %>
 
     <table>
@@ -44,10 +42,12 @@
 </p>
 
 <p>
-  <strong>Trains on this route:</strong>
+  <%= link_to "Add station", new_station_route_path(@route) %>
 </p>
 
 <p>
+  <strong>Trains on this route:</strong>
+
   <% if @route.trains.any? %>
 
     <ul>

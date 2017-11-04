@@ -7,6 +7,7 @@ class Wagon < ApplicationRecord
   }.freeze
 
   scope :sorted, ->(asc) { order(ordinal: (asc ? :asc : :desc)) }
+
   belongs_to :train
 
   validates :ordinal, uniqueness: { scope: :train_id }

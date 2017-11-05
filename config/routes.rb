@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :trains
+  resources :trains do
+    resources :wagons, shallow: true
+  end
+
   resources :wagons
 end

@@ -1,0 +1,35 @@
+<%= fields_for wagon do |f| %>
+  <div class="field">
+    <%= f.label  :type %>
+    <%= f.select :type, Wagon::TYPES, prompt: "Select type" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bottom_places %>
+    <%= f.number_field :bottom_places %>
+  </div>
+
+  <div class="field">
+    <%= f.label :upper_places %>
+    <%= f.number_field :upper_places %>
+  </div>
+
+  <div class="field">
+    <%= f.label :side_bottom_places %>
+    <%= f.number_field :side_bottom_places %>
+  </div>
+
+  <div class="field">
+    <%= f.label :side_upper_places %>
+    <%= f.number_field :side_upper_places %>
+  </div>
+
+  <div class="field">
+    <%= f.label :seat_places %>
+    <%= f.number_field :seat_places %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

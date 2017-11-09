@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :search, only: :show
+
+  resources :tickets, only: [:new, :show, :create]
+
   resources :trains do
     resources :wagons, shallow: true
   end

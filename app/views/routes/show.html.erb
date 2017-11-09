@@ -14,6 +14,8 @@
       <thead>
         <tr>
           <th>Title</th>
+          <th>Arrival</th>
+          <th>Departure</th>
           <th>Position</th>
         </tr>
       </thead>
@@ -21,6 +23,8 @@
         <% @route.railway_stations.route_ordered.each do |station| %>
           <tr>
             <td><%= station.title %></td>
+            <td><%= station.arrival_time_in(@route) %></td>
+            <td><%= station.departure_time_in(@route) %></td>
             <td>
               <%= form_tag update_position_railway_station_path(station), method: :patch do %>
                 <%= number_field_tag :position, station.position_in(@route) %>

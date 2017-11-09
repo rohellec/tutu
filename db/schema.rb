@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029071154) do
+ActiveRecord::Schema.define(version: 20171109133227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20171029071154) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
+    t.time "arrival_time"
+    t.time "departure_time"
     t.index ["railway_station_id"], name: "index_railway_stations_routes_on_railway_station_id"
     t.index ["route_id"], name: "index_railway_stations_routes_on_route_id"
   end
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(version: 20171029071154) do
     t.bigint "final_station_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "passenger"
     t.index ["base_station_id"], name: "index_tickets_on_base_station_id"
     t.index ["final_station_id"], name: "index_tickets_on_final_station_id"
     t.index ["train_id"], name: "index_tickets_on_train_id"
@@ -64,6 +67,7 @@ ActiveRecord::Schema.define(version: 20171029071154) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "wagons", force: :cascade do |t|

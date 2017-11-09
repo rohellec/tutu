@@ -16,6 +16,14 @@ class RailwayStation < ApplicationRecord
     station_route(route).try(:position)
   end
 
+  def arrival_time_in(route)
+    station_route(route).arrival_time.strftime("%k:%M")
+  end
+
+  def departure_time_in(route)
+    station_route(route).departure_time.strftime("%k:%M")
+  end
+
   protected
 
   def station_route(route)

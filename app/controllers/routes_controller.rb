@@ -43,7 +43,7 @@ class RoutesController < ApplicationController
   end
 
   def add_station
-    @route.add_station(params[:station], params[:position])
+    @route.add_station(route_station_params)
     redirect_to @route
   end
 
@@ -51,6 +51,10 @@ class RoutesController < ApplicationController
 
   def route_params
     params.require(:route).permit(:title)
+  end
+
+  def route_station_params
+    params.require(:station).permit(:railway_station_id, :arrival_time, :departure_time, :position)
   end
 
   def set_route

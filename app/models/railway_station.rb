@@ -8,25 +8,25 @@ class RailwayStation < ApplicationRecord
   has_many :routes, through: :railway_stations_routes
 
   def update_position(route, position)
-    station_route = station_route(route)
-    station_route.update(position: position)
+    station_route(route)
+    @station_route&.update(position: position)
   end
 
   def position_in(route)
-    station_route(route).try(:position)
+    station_route(route)&.position
   end
 
   def arrival_time_in(route)
-    station_route(route).arrival_time.strftime("%k:%M")
+    station_route(route)&.arrival_time&.strftime("%k:%M")
   end
 
   def departure_time_in(route)
-    station_route(route).departure_time.strftime("%k:%M")
+    station_route(route)&.departure_time&.strftime("%k:%M")
   end
 
   protected
 
   def station_route(route)
-    @station_route ||= railway_stations_routes.where(route: route).take
+    @station_route ||= railway_stations_routes.find_by(route: route)
   end
 end

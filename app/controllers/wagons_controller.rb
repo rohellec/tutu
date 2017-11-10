@@ -28,7 +28,7 @@ class WagonsController < ApplicationController
   end
 
   def update
-    @wagon = @wagon.becomes(params[:wagon][:type].constantize)
+    @wagon = @wagon.becomes(wagon_params[:type].constantize)
     if @wagon.update(wagon_params)
       redirect_to wagon_path(@wagon), notice: 'Wagon was successfully updated.'
     else
@@ -53,7 +53,7 @@ class WagonsController < ApplicationController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:type, :train_id, :bottom_places, :upper_places,
-                                  :side_bottom_places, :side_upper_places, :seat_places)
+    params.require(:wagon).permit(:type, :bottom_places, :upper_places, :seat_places,
+                                  :side_bottom_places, :side_upper_places)
   end
 end

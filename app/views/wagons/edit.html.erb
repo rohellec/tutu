@@ -1,6 +1,9 @@
 <h1>Editing Wagon</h1>
 
-<%= render 'form', wagon: @wagon %>
+<%= form_for @wagon do |form| %>
+  <%= render "common/errors", resource: @wagon %>
+  <%= render "fields", wagon: @wagon %>
+<% end %>
 
-<%= link_to 'Show', wagon_path(@wagon) %> |
-<%= link_to 'Back', wagons_path %>
+<%= link_to 'Show', @wagon %> |
+<%= link_to 'Back', @wagon.train %>

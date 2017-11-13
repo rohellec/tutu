@@ -17,14 +17,12 @@
 
 <p>
   <strong>Wagons:</strong>
-</p>
 
-<p>
   <% if @train.wagons.any? %>
 
     <ul>
       <% @train.sorted_wagons.each do |wagon| %>
-        <li><%= link_to "№ #{wagon.ordinal}", wagon_path(wagon) %></li>
+        <li><%= link_to "Wagon № #{wagon.ordinal}", wagon_path(wagon) %></li>
       <% end %>
     </ul>
 
@@ -33,6 +31,10 @@
     This train has no wagons added
 
   <% end %>
+</p>
+
+<p>
+  <%= link_to "Add wagon", new_train_wagon_path(@train) %>
 </p>
 
 <%= link_to 'Edit', edit_train_path(@train) %> |

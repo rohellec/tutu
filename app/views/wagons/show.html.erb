@@ -17,4 +17,4 @@
 <%= render "wagons/types/#{@wagon.type.underscore}", wagon: @wagon %>
 
 <%= link_to 'Edit', edit_wagon_path(@wagon) %> |
-<%= link_to 'Back', wagons_path %>
+<%= link_to 'Back', @wagon.train %>

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ticket for train №<%= @ticket.train.number %></h1>
+
+<p>
+  <strong>User:</strong>
+  <%= @ticket.user.name %>
+</p>
+
+<p>
+  <strong>Passenger:</strong>
+  <%= @ticket.passenger %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @ticket.base_station.title %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @ticket.final_station.title %>
+</p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @ticket.departure_time %>
+</p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @ticket.arrival_time %>
+</p>
+
+<%= link_to 'Back', search_path(base_id:  @ticket.base_station_id,
+                                final_id: @ticket.final_station_id) %>

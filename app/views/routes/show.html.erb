@@ -6,17 +6,37 @@
 </p>
 
 <p>
-  <strong>Route stations:</strong>
-</p>
+  <strong>Stations:</strong>
 
-<p>
   <% if @route.railway_stations.any? %>
 
-    <ul>
-      <% @route.railway_stations.route_order.each do |station| %>
-        <li><%= station.title %></li>
-      <% end %>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Arrival</th>
+          <th>Departure</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @route.railway_stations.route_ordered.each do |station| %>
+          <tr>
+            <td><%= station.title %></td>
+            <td><%= station.arrival_time_in(@route) %></td>
+            <td><%= station.departure_time_in(@route) %></td>
+            <td>
+              <%= form_tag update_position_railway_station_path(station), method: :patch do %>
+                <%= number_field_tag :position, station.position_in(@route) %>
+                <%= hidden_field_tag :route_id, @route.id %>
+                <%= submit_tag "Update" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
 
   <% else %>
 
@@ -26,10 +46,12 @@
 </p>
 
 <p>
-  <strong>Trains on this route:</strong>
+  <%= link_to "Add station", new_station_route_path(@route) %>
 </p>
 
 <p>
+  <strong>Trains on this route:</strong>
+
   <% if @route.trains.any? %>
 
     <ul>

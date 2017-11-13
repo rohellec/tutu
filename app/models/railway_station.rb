@@ -8,8 +8,7 @@ class RailwayStation < ApplicationRecord
   has_many :routes, through: :railway_stations_routes
 
   def update_position(route, position)
-    station_route(route)
-    @station_route&.update(position: position)
+    station_route(route)&.update(position: position)
   end
 
   def position_in(route)

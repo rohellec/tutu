@@ -12,6 +12,13 @@
     <p id="notice" class="notice"><%= notice %></p>
     <p id="alert"  class="alert"> <%= alert %> </p>
 
+    <% if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <p>Аккаунт: <%= current_user.email %></p>
+    <% else %>
+      <%= link_to "Sign in",  new_user_session_path %>
+    <% end %>
+
     <%= yield %>
     <%= render "common/footer" %>
   </body>

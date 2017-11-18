@@ -1,22 +1,47 @@
 class Admin::TicketsController < Admin::BaseController
-  def new
-    @ticket = Ticket.new(tickets_params)
+  before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @tickets = Ticket.all
   end
 
   def show
-    @ticket = Ticket.find(params[:id])
+  end
+
+  def new
+    @ticket = Ticket.new
+  end
+
+  def edit
   end
 
   def create
     @ticket = Ticket.new(tickets_params)
     if @ticket.save
-      redirect_to [:admin, @ticket]
+      redirect_to [:admin, @ticket], notice: 'Ticket was successfully created.'
     else
       render :new
     end
   end
 
+  def update
+    if @ticket.update(ticket_params)
+      redirect_to [:admin, @ticket], notice: 'Ticket was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @ticket.destroy
+    redirect_to ticket_stations_url, notice: 'Ticket was successfully destroyed.'
+  end
+
   private
+
+  def set_ticket
+    @ticket = Ticket.find(params[:id])
+  end
 
   def tickets_params
     params.require(:ticket).permit(:user_id, :train_id, :base_station_id, :final_station_id,

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :tickets, only: [:new, :show, :create]
+    resources :tickets
 
     resources :trains do
       resources :wagons, shallow: true
@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   end
 
   resource :search, only: :show
+  resources :tickets, except: [:edit, :update]
+
+  get :admin, to: "admin/base#index", as: :admin
 
   root "searches#show"
 end

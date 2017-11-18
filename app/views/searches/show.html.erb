@@ -37,12 +37,14 @@
           <td><%= result[:base_station].departure_time_in(result[:route]) %></td>
           <td><%= result[:final_station].arrival_time_in(result[:route])%></td>
           <td>
-            <%= link_to "Buy ticket",
-              new_ticket_path(ticket: {
-                                        train_id:         result[:train].id,
-                                        base_station_id:  result[:base_station].id,
-                                        final_station_id: result[:final_station].id,
-                                      }) %>
+            <% if user_signed_in? %>
+              <%= link_to "Buy ticket",
+                new_ticket_path(ticket: {
+                                          train_id:         result[:train].id,
+                                          base_station_id:  result[:base_station].id,
+                                          final_station_id: result[:final_station].id,
+                                        }) %>
+            <% end %>
           </td>
         </tr>
       <% end %>

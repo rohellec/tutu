@@ -1,11 +1,6 @@
 <h1>Ticket for train №<%= @ticket.train.number %></h1>
 
 <p>
-  <strong>Account:</strong>
-  <%= @ticket.user.name %>
-</p>
-
-<p>
   <strong>Passenger:</strong>
   <%= @ticket.passenger %>
 </p>
@@ -30,5 +25,4 @@
   <%= @ticket.arrival_time %>
 </p>
 
-<%= link_to 'Back', search_path(base_id:  @ticket.base_station_id,
-                                final_id: @ticket.final_station_id) %>
+<%= link_to 'Back', tickets_path %>

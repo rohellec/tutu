@@ -11,7 +11,7 @@ class Route < ApplicationRecord
   validates :title, presence: true
 
   def self.passed_through(base, final)
-    with_stations(base, final).each { |route| route.pass_through?(base, final) }
+    with_stations(base, final).find_all { |route| route.pass_through?(base, final) }
   end
 
   def add_station(params)

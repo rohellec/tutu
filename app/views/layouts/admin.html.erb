@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tutu</title>
+    <title>Tutu - admin</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,6 +12,7 @@
     <p id="notice" class="notice"><%= notice %></p>
     <p id="alert"  class="alert"> <%= alert %> </p>
 
+    <%= link_to "Control panel", admin_path %>
     <%= render "common/sign_in_links" %>
 
     <%= yield %>

@@ -17,7 +17,7 @@ class Ticket < ApplicationRecord
   protected
 
   def valid_route
-    return if ticket.train.route.pass_through?(base_station, final_station)
+    return if train.route.pass_through?(base_station, final_station)
     errors.add :base, "Train's №#{train.number} route must pass through " \
       "#{base_station} and #{final_station}"
   end

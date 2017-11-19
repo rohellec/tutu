@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
 
   def create
     if @ticket.save
-      redirect_to [:admin, @ticket], notice: 'Ticket was successfully created.'
+      redirect_to @ticket, notice: 'Ticket was successfully created.'
     else
       render :new
     end

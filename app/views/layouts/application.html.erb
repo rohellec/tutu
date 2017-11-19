@@ -10,9 +10,10 @@
 
   <body>
     <p id="notice" class="notice"><%= notice %></p>
-    <p id="alert"  class="alert"> <%= alert %> </p>
+    <p class="alert"> <%= alert %> </p>
 
-    <%= render "common/sign_in_links" %>
+    <%= render "common/auth_info" %>
+    <%= render "common/menu" %>
 
     <%= yield %>
 

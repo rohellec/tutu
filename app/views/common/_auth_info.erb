@@ -1,6 +1,9 @@
 <% if user_signed_in? %>
   <p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
-  <p>Аккаунт: <%= current_user.email %></p>
+  <p>Account: <%= current_user.full_name %></p>
 <% else %>
-  <p><%= link_to "Sign in",  new_user_session_path %></p>
+  <p>
+    <%= link_to "Sign in",  new_user_session_path %> |
+    <%= link_to "Sign up",  new_user_registration_path %>
+  </p>
 <% end %>

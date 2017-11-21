@@ -4,4 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
   has_many :tickets
+
+  validates :name, presence: true
+
+  def full_name
+    surname.blank? ? name : "#{name} #{surname}"
+  end
 end

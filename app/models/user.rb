@@ -8,6 +8,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def full_name
-    surname.blank? ? name : "#{name} #{surname}"
+    [name, surname].compact.join(" ")
   end
 end

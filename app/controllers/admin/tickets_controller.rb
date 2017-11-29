@@ -16,7 +16,7 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def create
-    @ticket = Ticket.new(tickets_params)
+    @ticket = Ticket.new(ticket_params)
     if @ticket.save
       redirect_to [:admin, @ticket], notice: 'Ticket was successfully created.'
     else
@@ -43,7 +43,7 @@ class Admin::TicketsController < Admin::BaseController
     @ticket = Ticket.find(params[:id])
   end
 
-  def tickets_params
+  def ticket_params
     params.require(:ticket).permit(:user_id, :train_id, :base_station_id, :final_station_id,
                                    :passenger)
   end

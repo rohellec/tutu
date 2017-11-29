@@ -24,7 +24,7 @@
             <td><%= station.arrival_time_in(@route) %></td>
             <td><%= station.departure_time_in(@route) %></td>
             <td>
-              <%= form_tag [:update_position, :admin, station], method: :patch do %>
+              <%= form_tag update_position_admin_station(station), method: :patch do %>
                 <%= number_field_tag :position, station.position_in(@route) %>
                 <%= hidden_field_tag :route_id, @route.id %>
                 <%= submit_tag "Update" %>
@@ -54,7 +54,7 @@
 
     <ul>
       <% @route.trains.each do |train| %>
-        <li><%= link_to "№#{train.number}", [:admin, train] %></li>
+        <li><%= link_to "№#{train.number}", admin_train_path(train) %></li>
       <% end %>
     </ul>
 
@@ -65,5 +65,5 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', [:edit, :admin, @route] %> |
+<%= link_to 'Edit', edit_admin_route_path(@route) %> |
 <%= link_to 'Back', admin_routes_path %>

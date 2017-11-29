@@ -2,5 +2,5 @@
 
 <%= render "form", route: @route %>
 
-<%= link_to 'Show', [:admin, @route] %> |
+<%= link_to 'Show', admin_route_path(@route) %> |
 <%= link_to 'Back', admin_routes_path %>

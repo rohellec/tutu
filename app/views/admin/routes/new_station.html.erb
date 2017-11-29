@@ -1,6 +1,6 @@
 <h1>New railway station on route <%= @route.title %></h1>
 
-<%= form_with scope: :station, url: [:add_station, :admin, @route], local: true do |form| %>
+<%= form_with scope: :station, url: add_station_admin_route_path(@route), local: true do |form| %>
   <div class="field">
     <%= form.label :railway_station_id %>
     <%= form.collection_select :railway_station_id, @stations, :id, :title,
@@ -27,4 +27,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', [:admin, @route] %>
+<%= link_to 'Back', admin_route_path(@route) %>

@@ -20,7 +20,7 @@ class Admin::WagonsController < Admin::BaseController
   def create
     @wagon = @train.wagons.new(wagon_params)
     if @wagon.save
-      redirect_to [:admin, @train], notice: 'Wagon was successfully created.'
+      redirect_to admin_train_path(@train), notice: 'Wagon was successfully created.'
     else
       @wagon = @wagon.becomes(Wagon)
       render :new

@@ -8,11 +8,6 @@
   <%= form.hidden_field :final_station_id %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.collection_select :user_id, User.all, :id, :name, prompt: "Select user" %>
-  </div>
-
-  <div class="field">
     <%= form.label :pasenger %>
     <%= form.text_field :passenger %>
   </div>
@@ -22,5 +17,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', search_path(base_id:  @ticket.base_station_id,
-                                final_id: @ticket.final_station_id) %>
+<%= link_to 'Back', :back %>

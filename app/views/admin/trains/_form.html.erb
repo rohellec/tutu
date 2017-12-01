@@ -1,0 +1,27 @@
+<%= form_for [:admin, train] do |form| %>
+  <%= render "common/errors", resource: train %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :route_id %>
+    <%= form.collection_select :route_id, Route.all, :id, :title, prompt: "Select route" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :head_direction, "Wagons direction" %>
+
+    <%= form.radio_button :head_direction, true %>
+    <%= form.label :head_direction, "Head", value: true %>
+
+    <%= form.radio_button :head_direction, false %>
+    <%= form.label :head_direction, "Tail", value: false %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

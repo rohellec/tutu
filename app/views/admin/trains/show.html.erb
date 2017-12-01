@@ -1,0 +1,39 @@
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+
+  <% if @train.route.present? %>
+    <%= @train.route.title %>
+  <% else %>
+    Not assigned
+  <% end %>
+</p>
+
+<p>
+  <strong>Wagons:</strong>
+
+  <% if @train.wagons.any? %>
+
+    <ul>
+      <% @train.sorted_wagons.each do |wagon| %>
+        <li><%= link_to "Wagon № #{wagon.ordinal}", admin_wagon_path(wagon) %></li>
+      <% end %>
+    </ul>
+
+  <% else %>
+
+    This train has no wagons added
+
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Add wagon", new_admin_train_wagon_path(@train) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_train_path(@train) %> |
+<%= link_to 'Back', admin_trains_path %>

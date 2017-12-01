@@ -1,22 +1,29 @@
 Rails.application.routes.draw do
-  resources :railway_stations do
-    patch :update_position, on: :member
-  end
+  devise_for :users, controllers: { sessions: "sessions" }
 
-  resources :routes do
-    member do
-      get  :new_station
-      post :add_station
+  namespace :admin do
+    resources :railway_stations do
+      patch :update_position, on: :member
+    end
+
+    resources :routes do
+      member do
+        get  :new_station
+        post :add_station
+      end
+    end
+
+    resources :tickets
+
+    resources :trains do
+      resources :wagons, shallow: true
     end
   end
 
   resource :search, only: :show
+  resources :tickets, except: [:edit, :update]
 
-  resources :tickets, only: [:new, :show, :create]
+  get :admin, to: "admin/base#index", as: :admin
 
-  resources :trains do
-    resources :wagons, shallow: true
-  end
-
-  resources :wagons
+  root "searches#show"
 end

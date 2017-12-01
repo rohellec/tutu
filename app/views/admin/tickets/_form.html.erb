@@ -1,0 +1,34 @@
+<%= form_for [:admin, ticket] do |form| %>
+  <%= render "common/errors", resource: ticket %>
+
+  <div class="field">
+    <%= form.label :user_id, "Account" %>
+    <%= form.collection_select :user_id, User.all, :id, :full_name, prompt: "Select user" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pasenger %>
+    <%= form.text_field :passenger %>
+  </div>
+
+  <div class="field">
+    <%= form.label :train_id %>
+    <%= form.collection_select :train_id, Train.all, :id, :number, prompt: "Select train" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :base_station_id %>
+    <%= form.collection_select :base_station_id, RailwayStation.all, :id, :title,
+      prompt: "Select station" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :final_station_id %>
+    <%= form.collection_select :final_station_id, RailwayStation.all, :id, :title,
+      prompt: "Select station" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

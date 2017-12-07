@@ -9,3 +9,10 @@ en:
         notice: "Wagon was successfully updated."
       destroy:
         notice: "Wagon was successfully destroyed."
+    trains:
+      create:
+        notice: "Train was successfully created."
+      update:
+        notice: "Train was successfully updated."
+      destroy:
+        notice: "Train was successfully destroyed."

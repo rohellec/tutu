@@ -3,9 +3,17 @@ ru:
   edit: "Редактировать"
   back: "Назад"
   destroy: "Удалить"
-  confirmation: "Вы уверены?"
+  confirm: "Вы уверены?"
   admin:
     wagons:
+      show:
+        show_header: "Вагон №%{ordinal}"
+        train: "Поезд"
+        type: "Тип"
+        Sitting: "Сидячий"
+        Economy: "Плацкарт"
+        Coupe: "Купе"
+        Luxe: "СВ"
       fields:
         select_type: "Выберите тип"
         create: "Создать вагон"
@@ -18,14 +26,6 @@ ru:
         new_header: "Новый вагон"
       edit:
         edit_header: "Редактирование вагона"
-      show:
-        show_header: "Вагон №%{ordinal}"
-        train: "Поезд"
-        type: "Тип"
-        Sitting: "Сидячий"
-        Economy: "Плацкарт"
-        Coupe: "Купе"
-        Luxe: "СВ"
       types:
         coupe_wagon:
           bottom: "Нижние места"
@@ -40,6 +40,27 @@ ru:
         sitting_wagon:
           seat: "Сидячие места"
     trains:
+      index:
+        index_header: "Поезда"
+        number: "Номер"
+        no_trains: "Не добавлено ни одного поезда"
+        new_train: "Новый поезд"
+      show:
+        number: "Номер"
+        route: "Маршрут"
+        no_route: "Не назначен"
+        new_wagon: "Добавить вагон"
+        wagons: "Вагоны"
+      new:
+        new_header: "Новый поезд"
+      edit:
+        edit_header: "Редактирование поезда"
+      form:
+        create: "Cоздать поезд"
+        update: "Обновить поезд"
+        head: "С головы"
+        tail: "С хвоста"
+        select_route: "Выберите маршрут"
       wagon:
         Sitting: "Сидячий"
         Economy: "Плацкарт"

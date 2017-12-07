@@ -6,6 +6,14 @@ en:
   confirm: "Are you sure?"
   admin:
     wagons:
+      show:
+        show_header: "Wagon №%{ordinal}"
+        train: "Train"
+        type: "Type"
+        Sitting: "Sitting"
+        Economy: "Economy"
+        Coupe: "Coupe"
+        Luxe: "Luxe"
       fields:
         select_type: "Select type"
         create: "Create wagon"
@@ -18,14 +26,6 @@ en:
         new_header: "New wagon"
       edit:
         edit_header: "Edit wagon"
-      show:
-        show_header: "Wagon №%{ordinal}"
-        train: "Train"
-        type: "Type"
-        Sitting: "Sitting"
-        Economy: "Economy"
-        Coupe: "Coupe"
-        Luxe: "Luxe"
       types:
         coupe_wagon:
           bottom: "Bottom places"
@@ -40,6 +40,27 @@ en:
         sitting_wagon:
           seat: "Sitting places"
     trains:
+      index:
+        index_header: "Trains"
+        number: "Number"
+        no_trains: "There are no trains added"
+        new_train: "New train"
+      show:
+        number: "Number"
+        route: "Route"
+        no_route: "Not assigned"
+        new_wagon: "Add wagon"
+        wagons: "Wagons"
+      new:
+        new_header: "New train"
+      edit:
+        edit_header: "Edit train"
+      form:
+        create: "Create train"
+        update: "Update train"
+        head: "Head"
+        tail: "Tail"
+        select_route: "Select route"
       wagon:
         Sitting: "Sitting"
         Economy: "Economy"
@@ -54,4 +75,3 @@ en:
         side_upper: "Side upper"
         seat: "Sitting"
         no_wagons: "There are no wagons added"
-

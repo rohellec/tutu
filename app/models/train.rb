@@ -5,6 +5,8 @@ class Train < ApplicationRecord
   has_many :tickets
   has_many :wagons, dependent: :destroy
 
+  validates :number, presence: true
+
   def sorted_wagons
     wagons.sorted(head_direction)
   end

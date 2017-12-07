@@ -1,26 +1,26 @@
 <p>
-  <strong>Number:</strong>
+  <strong><%= t(".number") %>:</strong>
   <%= @train.number %>
 </p>
 
 <p>
-  <strong>Route:</strong>
+  <strong><%= t(".route") %>:</strong>
 
   <% if @train.route.present? %>
     <%= @train.route.title %>
   <% else %>
-    Not assigned
+    <%= t(".no_route") %>
   <% end %>
 </p>
 
 <p>
-  <strong>Wagons:</strong>
+  <strong><%= t(".wagons") %>:</strong>
 </p>
 <%= render "wagons", wagons: @train.sorted_wagons %>
 
 <p>
-  <%= link_to "Add wagon", new_admin_train_wagon_path(@train) %>
+  <%= link_to t(".new_wagon"), new_admin_train_wagon_path(@train) %>
 </p>
 
-<%= link_to 'Edit', edit_admin_train_path(@train) %> |
-<%= link_to 'Back', admin_trains_path %>
+<%= link_to t("edit"), edit_admin_train_path(@train) %> |
+<%= link_to t("back"), admin_trains_path %>

@@ -1,0 +1,53 @@
+ru:
+  activerecord:
+    models:
+      railway_station: "Станция"
+      route: "Маршрут"
+      ticket: "Билет"
+      train: "Поезд"
+      wagon: "Вагон"
+    attributes:
+      railway_station:
+        title: "Название"
+      railway_station_route:
+        position: "Позиция"
+      route:
+        title: "Название"
+      ticket:
+        user_id: "Аккаунт"
+        pasenger: "Пассажир"
+        train_id: "Поезд"
+        base_station_id: "Начальная станция"
+        final_station_id: "Конечная станция"
+      train:
+        number: "Номер"
+        route_id: "Маршрут"
+        head_direction: "Нумерация вагонов"
+      wagon:
+        type: "Тип"
+        ordinal: "Позиция"
+        bottom_places: "Нижние места"
+        upper_places: "Верхние места"
+        side_bottom_places: "Нижние боковые места"
+        side_upper_places: "Верхние боковые места"
+        seat_places: "Сидячие места"
+    errors:
+      messages:
+        blank: "не может быть пустым"
+      models:
+        wagon:
+          attributes:
+            ordinal:
+              taken: "должна быть уникальна в пределах поезда"
+            type:
+              inclusion: "должен быть одним из перечисленных в списке"
+            bottom_places:
+              blank: "должны быть указаны"
+            upper_places:
+              blank: "должны быть указаны"
+            side_bottom_places:
+              blank: "должны быть указаны"
+            side_upper_places:
+              blank: "должны быть указаны"
+            seat_places:
+              blank: "должны быть указаны"

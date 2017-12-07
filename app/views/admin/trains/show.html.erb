@@ -15,21 +15,8 @@
 
 <p>
   <strong>Wagons:</strong>
-
-  <% if @train.wagons.any? %>
-
-    <ul>
-      <% @train.sorted_wagons.each do |wagon| %>
-        <li><%= link_to "Wagon № #{wagon.ordinal}", admin_wagon_path(wagon) %></li>
-      <% end %>
-    </ul>
-
-  <% else %>
-
-    This train has no wagons added
-
-  <% end %>
 </p>
+<%= render "wagons", wagons: @train.sorted_wagons %>
 
 <p>
   <%= link_to "Add wagon", new_admin_train_wagon_path(@train) %>

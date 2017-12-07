@@ -1,0 +1,11 @@
+en:
+  sessions:
+    welcome: "Welcome"
+  admin:
+    wagons:
+      create:
+        notice: "Wagon was successfully created."
+      update:
+        notice: "Wagon was successfully updated."
+      destroy:
+        notice: "Wagon was successfully destroyed."

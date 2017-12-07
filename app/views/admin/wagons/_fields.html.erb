@@ -1,8 +1,21 @@
 <%= fields_for wagon do |f| %>
   <div class="field">
     <%= f.label  :type %>
-    <%= f.select :type, Wagon::TYPES, prompt: "Select type" %>
+    <%= f.select :type, prompt: t(".select_type") do %>
+
+      <% Wagon::TYPES.each do |type| %>
+        <%= content_tag(:option, t(".#{type}"), value: type) %>
+      <% end %>
+
+    <% end %>
   </div>
+
+  <% if wagon.persisted? %>
+    <div class="field">
+      <%= f.label :ordinal %>
+      <%= f.number_field :ordinal %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :bottom_places %>
@@ -30,6 +43,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit wagon.new_record? ? t(".create") : t(".update") %>
   </div>
 <% end %>

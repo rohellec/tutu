@@ -1,3 +1,57 @@
 en:
-  sessions:
-    welcome: "Welcome"
+  show: "Show"
+  edit: "Edit"
+  back: "Back"
+  destroy: "Destroy"
+  confirm: "Are you sure?"
+  admin:
+    wagons:
+      fields:
+        select_type: "Select type"
+        create: "Create wagon"
+        update: "Update wagon"
+        SittingWagon: "Sitting"
+        EconomWagon: "Economy"
+        CoupeWagon: "Coupe"
+        LuxeWagon: "Luxe"
+      new:
+        new_header: "New wagon"
+      edit:
+        edit_header: "Edit wagon"
+      show:
+        show_header: "Wagon №%{ordinal}"
+        train: "Train"
+        type: "Type"
+        Sitting: "Sitting"
+        Economy: "Economy"
+        Coupe: "Coupe"
+        Luxe: "Luxe"
+      types:
+        coupe_wagon:
+          bottom: "Bottom places"
+          upper: "Upper places"
+        econom_wagon:
+          bottom: "Bottom places"
+          upper: "Upper places"
+          side_bottom: "Side bottom places"
+          side_upper: "Side upper places"
+        luxe_wagon:
+          bottom: "Bottom places"
+        sitting_wagon:
+          seat: "Sitting places"
+    trains:
+      wagon:
+        Sitting: "Sitting"
+        Economy: "Economy"
+        Coupe: "Coupe"
+        Luxe: "Luxe"
+      wagons:
+        ordinal: "Ordinal"
+        type: "Type"
+        bottom: "Bottom"
+        upper: "Upper"
+        side_bottom: "Side bottom"
+        side_upper: "Side upper"
+        seat: "Sitting"
+        no_wagons: "There are no wagons added"
+

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :tickets
 
     resources :trains do
-      resources :wagons, shallow: true
+      resources :wagons, shallow: true, except: :index
     end
   end
 

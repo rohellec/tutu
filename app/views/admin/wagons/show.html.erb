@@ -1,18 +1,18 @@
 <p>
-  <strong>Wagon №<%= @wagon.ordinal %></strong>
+  <strong><%= t(".show_header", ordinal: @wagon.ordinal )%></strong>
 </p>
 
 <p>
-  <strong>Train:</strong>
+  <strong><%= t(".train") %>:</strong>
   <%= @wagon.train.number %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @wagon.display_name %>
+  <strong><%= t(".type") %>:</strong>
+  <%= t(".#{@wagon.display_name}") %>
 </p>
 
 <%= render "admin/wagons/types/#{@wagon.type.underscore}", wagon: @wagon %>
 
-<%= link_to 'Edit', edit_admin_wagon_path(@wagon) %> |
-<%= link_to 'Back', admin_train_path(@wagon.train) %>
+<%= link_to t("edit"), edit_admin_wagon_path(@wagon) %> |
+<%= link_to t("back"), admin_train_path(@wagon.train) %>

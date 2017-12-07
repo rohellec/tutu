@@ -1,0 +1,11 @@
+ru:
+  sessions:
+    welcome: "Привет"
+  admin:
+    wagons:
+      create:
+        notice: "Вагон был успешно создан."
+      update:
+        notice: "Вагон был успешно обновлён."
+      destroy:
+        notice: "Вагон был успешно удалён."

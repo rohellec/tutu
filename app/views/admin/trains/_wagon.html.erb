@@ -1,0 +1,13 @@
+<tr>
+  <td><%= wagon.ordinal %></td>
+  <td><%= t(".#{wagon.display_name}") %></td>
+  <td><%= wagon.bottom_places %></td>
+  <td><%= wagon.upper_places %></td>
+  <td><%= wagon.side_bottom_places %></td>
+  <td><%= wagon.side_upper_places %></td>
+  <td><%= wagon.seat_places %></td>
+  <td><%= link_to t('show'),    admin_wagon_path(wagon) %></td>
+  <td><%= link_to t('edit'),    edit_admin_wagon_path(wagon) %></td>
+  <td><%= link_to t('destroy'), admin_wagon_path(wagon), method: :delete,
+                  data: { confirm: t('confirmation') } %></td>
+</tr>

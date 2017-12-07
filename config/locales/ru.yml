@@ -1,3 +1,57 @@
 ru:
-  sessions:
-    welcome: "Привет"
+  show: "Показать"
+  edit: "Редактировать"
+  back: "Назад"
+  destroy: "Удалить"
+  confirmation: "Вы уверены?"
+  admin:
+    wagons:
+      fields:
+        select_type: "Выберите тип"
+        create: "Создать вагон"
+        update: "Обновить вагон"
+        SittingWagon: "Сидячий"
+        EconomWagon: "Плацкарт"
+        CoupeWagon: "Купе"
+        LuxeWagon: "СВ"
+      new:
+        new_header: "Новый вагон"
+      edit:
+        edit_header: "Редактирование вагона"
+      show:
+        show_header: "Вагон №%{ordinal}"
+        train: "Поезд"
+        type: "Тип"
+        Sitting: "Сидячий"
+        Economy: "Плацкарт"
+        Coupe: "Купе"
+        Luxe: "СВ"
+      types:
+        coupe_wagon:
+          bottom: "Нижние места"
+          upper: "Верхние места"
+        econom_wagon:
+          bottom: "Нижние места"
+          upper: "Верхние места"
+          side_bottom: "Нижние боковые места"
+          side_upper: "Верхние боковые места"
+        luxe_wagon:
+          bottom: "Нижние  места"
+        sitting_wagon:
+          seat: "Сидячие места"
+    trains:
+      wagon:
+        Sitting: "Сидячий"
+        Economy: "Плацкарт"
+        Coupe: "Купе"
+        Luxe: "СВ"
+      wagons:
+        ordinal: "Позиция"
+        type: "Тип"
+        bottom: "Нижние"
+        upper: "Верхние"
+        side_bottom: "Нижние боковые"
+        side_upper: "Верхние боковые"
+        seat: "Сидячие места"
+        no_wagons: "Не добавлено ни одного вагона"
+

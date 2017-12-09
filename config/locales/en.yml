@@ -75,3 +75,34 @@ en:
         side_upper: "Side upper"
         seat: "Sitting"
         no_wagons: "There are no wagons added"
+    routes:
+      index:
+        index_header: "Routes"
+        title: "Title"
+        no_routes: "There are nor routes added"
+        new_route: "New route"
+      show:
+        title: "Title"
+        stations: "Stations"
+        arrival: "Arrival"
+        departure: "Departure"
+        position: "Position"
+        update: "Update"
+        no_stations: "There no stations added to this route"
+        new_station: "Add station"
+        trains: "Trains"
+        no_trains: "There are no trains assigned to this route"
+      new:
+        new_header: "New route"
+      edit:
+        edit_header: "Edit route"
+      form:
+        create: "Create route"
+        update: "Update route"
+      new_station:
+        header: "New station on the route %{title}"
+        station: "Station"
+        arrival_time: "Arrival time"
+        departure_time: "Departure time"
+        position: "Position"
+        create: "Create"

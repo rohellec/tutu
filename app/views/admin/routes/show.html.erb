@@ -1,20 +1,20 @@
 <p>
-  <strong>Title:</strong>
+  <strong><%= t(".title") %>:</strong>
   <%= @route.title %>
 </p>
 
 <p>
-  <strong>Stations:</strong>
+  <strong><%= t(".stations") %>:</strong>
 
   <% if @route.railway_stations.any? %>
 
     <table>
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Arrival</th>
-          <th>Departure</th>
-          <th>Position</th>
+          <th><%= t(".title")     %></th>
+          <th><%= t(".arrival")   %></th>
+          <th><%= t(".departure") %></th>
+          <th><%= t(".position")  %></th>
         </tr>
       </thead>
       <tbody>
@@ -24,10 +24,10 @@
             <td><%= station.arrival_time_in(@route) %></td>
             <td><%= station.departure_time_in(@route) %></td>
             <td>
-              <%= form_tag update_position_admin_station(station), method: :patch do %>
+              <%= form_tag update_position_admin_railway_station_path(station), method: :patch do %>
                 <%= number_field_tag :position, station.position_in(@route) %>
                 <%= hidden_field_tag :route_id, @route.id %>
-                <%= submit_tag "Update" %>
+                <%= submit_tag t(".update") %>
               <% end %>
             </td>
           </tr>
@@ -38,17 +38,17 @@
 
   <% else %>
 
-    No stations were added to this route
+    <%= t(".no_stations") %>
 
   <% end %>
 </p>
 
 <p>
-  <%= link_to "Add station", new_station_admin_route_path(@route) %>
+  <%= link_to t(".new_station"), new_station_admin_route_path(@route) %>
 </p>
 
 <p>
-  <strong>Trains on this route:</strong>
+  <strong><%= t(".trains") %>:</strong>
 
   <% if @route.trains.any? %>
 
@@ -60,10 +60,10 @@
 
   <% else %>
 
-    No trains were assigned to this route
+    <%= t(".no_trains") %>
 
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_admin_route_path(@route) %> |
-<%= link_to 'Back', admin_routes_path %>
+<%= link_to t("edit"), edit_admin_route_path(@route) %> |
+<%= link_to t("back"), admin_routes_path %>

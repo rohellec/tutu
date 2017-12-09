@@ -75,4 +75,34 @@ ru:
         side_upper: "Верхние боковые"
         seat: "Сидячие места"
         no_wagons: "Не добавлено ни одного вагона"
-
+    routes:
+      index:
+        index_header: "Маршруты"
+        title: "Название"
+        no_routes: "Не добавлено ни одного маршрута"
+        new_route: "Новый маршрут"
+      show:
+        title: "Название"
+        stations: "Станции"
+        arrival: "Прибытие"
+        departure: "Отправление"
+        position: "Позиция"
+        update: "Обновить"
+        no_stations: "На этом маршруте пока нет станций"
+        new_station: "Добавить станцию"
+        trains: "Поезда"
+        no_trains: "На этом маршрут не назначен ни один поезд"
+      new:
+        new_header: "Новый маршрут"
+      edit:
+        edit_header: "Редактирование маршрута"
+      form:
+        create: "Cоздать маршрут"
+        update: "Обновить маршрут"
+      new_station:
+        header: "Новая станция на маршруте %{title}"
+        station: "Станция"
+        arrival_time: "Время прибытия"
+        departure_time: "Время отправления"
+        position: "Позиция"
+        create: "Добавить"

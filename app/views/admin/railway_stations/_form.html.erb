@@ -7,6 +7,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit railway_station.new_record? ? t(".create") : t(".update") %>
   </div>
 <% end %>

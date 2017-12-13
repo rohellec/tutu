@@ -79,7 +79,7 @@ en:
       index:
         index_header: "Routes"
         title: "Title"
-        no_routes: "There are nor routes added"
+        no_routes: "There are no routes added"
         new_route: "New route"
       show:
         title: "Title"
@@ -106,3 +106,18 @@ en:
         departure_time: "Departure time"
         position: "Position"
         create: "Create"
+    railway_stations:
+      index:
+        index_header: "Railway stations"
+        title: "Title"
+        no_stations: "There no stations added"
+        new_station: "New station"
+      show:
+        title: "Title"
+      new:
+        new_header: "New railway station"
+      edit:
+        edit_header: "Edit railway station"
+      form:
+        create: "Create station"
+        update: "Update station"

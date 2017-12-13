@@ -5,6 +5,9 @@
 
 <p>
   <strong><%= t(".stations") %>:</strong>
+</p>
+
+  <%= render("common/errors", resource: @railway_station) if @railway_station %>
 
   <% if @route.railway_stations.any? %>
 
@@ -28,6 +31,8 @@
                 <%= number_field_tag :position, station.position_in(@route) %>
                 <%= hidden_field_tag :route_id, @route.id %>
                 <%= submit_tag t(".update") %>
+                <%= link_to t("destroy"), delete_station_admin_route_path(@route, station),
+                                          method: :delete %>
               <% end %>
             </td>
           </tr>
@@ -38,10 +43,11 @@
 
   <% else %>
 
-    <%= t(".no_stations") %>
+    <p>
+      <%= t(".no_stations") %>
+    </p>
 
   <% end %>
-</p>
 
 <p>
   <%= link_to t(".new_station"), new_station_admin_route_path(@route) %>

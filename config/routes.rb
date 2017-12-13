@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
     resources :routes do
       member do
-        get  :new_station
-        post :add_station
+        get    :new_station
+        post   :add_station
+        delete "delete_station/:station_id", to: "routes#delete_station",
+                                             as: :delete_station
       end
     end
 

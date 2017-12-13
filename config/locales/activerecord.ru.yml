@@ -51,3 +51,12 @@ ru:
               blank: "должны быть указаны"
             seat_places:
               blank: "должны быть указаны"
+        railway_station_route:
+          attributes:
+            position:
+              taken: "должна быть уникальна в пределах маршрута"
+        railway_station:
+          attributes:
+            base:
+              uniq_position: "Позиция должна быть уникальна в пределах маршрута"
+

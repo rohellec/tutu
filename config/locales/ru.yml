@@ -106,3 +106,18 @@ ru:
         departure_time: "Время отправления"
         position: "Позиция"
         create: "Добавить"
+    railway_stations:
+      index:
+        index_header: "Станции"
+        title: "Название"
+        no_stations: "Не добавлено ни одной станции"
+        new_station: "Новая станция"
+      show:
+        title: "Название"
+      new:
+        new_header: "Новая станция"
+      edit:
+        edit_header: "Редактирование станции"
+      form:
+        create: "Создать станцию"
+        update: "Обновить станцию"

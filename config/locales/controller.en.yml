@@ -23,3 +23,10 @@ en:
         notice: "Route was successfully updated."
       destroy:
         notice: "Route was successfully destroyed."
+    railway_stations:
+      create:
+        notice: "Railway station was successfully created."
+      update:
+        notice: "Railway station was successfully updated."
+      destroy:
+        notice: "Railway station was successfully destroyed."

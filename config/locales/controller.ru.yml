@@ -23,3 +23,11 @@ ru:
         notice: "Маршрут был успешно обновлён."
       destroy:
         notice: "Маршрут был успешно удалён."
+    railway_stations:
+      create:
+        notice: "Станция был успешно создан."
+      update:
+        notice: "Станция был успешно обновлён."
+      destroy:
+        notice: "Станция был успешно удалён."
+

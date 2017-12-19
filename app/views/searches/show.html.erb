@@ -1,20 +1,20 @@
 <h1>Search tickets</h1>
 
-<%= form_with url: search_path, method: :get, local: true do |form| %>
-    <div class="field">
-      <%= form.label :base_id, "Base station" %>
+<%= form_with url: search_path, method: :get, local: true, class: "form-inline" do |form| %>
+    <div class="form-group">
+      <%= form.label :base_id, "Base station", class: "mr-sm-2" %>
       <%= form.collection_select :base_id, RailwayStation.all, :id, :title,
-        prompt: "Select base station" %>
+        { prompt: "Select base station" }, { class: "custom-select mr-sm-4" } %>
     </div>
 
-    <div class="field">
-      <%= form.label :final_id, "Final station" %>
+    <div class="form-group">
+      <%= form.label :final_id, "Final station", class: "mr-sm-2" %>
       <%= form.collection_select :final_id, RailwayStation.all, :id, :title,
-        prompt: "Select final station" %>
+        { prompt: "Select final station" }, { class: "custom-select mr-sm-3" }  %>
     </div>
 
     <div class="actions">
-      <%= form.submit "Search" %>
+      <%= form.submit "Search", class: "btn btn-primary" %>
     </div>
 <% end %>
 
@@ -22,28 +22,34 @@
 
 <% if @search_results&.any? %>
 
-  <table>
+  <table class="table table-striped table-hover">
     <thead>
       <tr>
         <th>Train</th>
-        <th>Departure</th>
-        <th>Arrival</th>
+        <th class="text-center">Departure</th>
+        <th class="text-center">Arrival</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% @search_results.each do |result| %>
         <tr>
-          <td>№ <%= result[:train].number %></td>
-          <td><%= result[:base_station].departure_time_in(result[:route]) %></td>
-          <td><%= result[:final_station].arrival_time_in(result[:route])%></td>
-          <td>
+          <td class="align-middle">№ <%= result[:train].number %></td>
+          <td class="text-center align-middle">
+            <%= result[:base_station].departure_time_in(result[:route]) %>
+          </td>
+          <td class="text-center align-middle">
+            <%= result[:final_station].arrival_time_in(result[:route]) %>
+          </td>
+          <td class="text-center">
             <% if user_signed_in? %>
               <%= link_to "Buy ticket",
                 new_ticket_path(ticket: {
                                           train_id:         result[:train].id,
                                           base_station_id:  result[:base_station].id,
                                           final_station_id: result[:final_station].id,
-                                        }) %>
+                                        }),
+                class: "btn btn-primary" %>
             <% end %>
           </td>
         </tr>

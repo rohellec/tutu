@@ -1,7 +1,14 @@
 <tr>
-  <td><%= route.title %></td>
-  <td><%= link_to t("show"),    admin_route_path(route) %></td>
-  <td><%= link_to t("edit"),    edit_admin_route_path(route) %></td>
-  <td><%= link_to t("destroy"), admin_route_path(route), method: :delete,
-                  data: { confirm: t("confirm") } %></td>
+  <td class="align-middle text-center"><%= route.title %></td>
+  <td class="text-right">
+    <div class="btn-group">
+      <%= link_to t("show"),    admin_route_path(route),
+                                class: "btn btn-secondary" %>
+      <%= link_to t("edit"),    edit_admin_route_path(route),
+                                class: "btn btn-secondary" %>
+      <%= link_to t("destroy"), admin_route_path(route), method: :delete,
+                                data: { confirm: t("confirm") },
+                                class: "btn btn-secondary" %>
+    </div>
+  </td>
 </tr>

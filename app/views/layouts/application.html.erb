@@ -9,14 +9,12 @@
   </head>
 
   <body>
-    <p id="notice" class="notice"><%= notice %></p>
-    <p class="alert"> <%= alert %> </p>
+    <%= render "common/header" %>
 
-    <%= render "common/auth_info" %>
-    <%= render "common/menu" %>
+    <div class="container">
+      <%= yield %>
+      <%= render "common/footer" %>
+    </div>
 
-    <%= yield %>
-
-    <%= render "common/footer" %>
   </body>
 </html>

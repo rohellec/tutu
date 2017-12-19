@@ -9,14 +9,22 @@
   </head>
 
   <body>
-    <p id="notice" class="notice"><%= notice %></p>
-    <p class="alert"> <%= alert %> </p>
+    <%= render "common/header" %>
 
-    <%= render "common/auth_info" %>
-    <%= render "common/menu" %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 control-panel">
+          <%= render "common/control_panel" %>
+        </div>
+        <div class="col-9">
+          <div class="row justify-content-center">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <%= yield %>
+     <%= render "common/footer" %>
 
-    <%= render "common/footer" %>
   </body>
 </html>

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+  <ul class="nav nav-pills">
+
+    <%= link_to "Tutu", root_path, class: "navbar-brand" %>
+
+    <li class="nav-item">
+      <%= link_to "Search", search_path, class: "nav-link" %>
+    </li>
+
+    <% if user_signed_in? %>
+
+    <li class="nav-item">
+      <%= link_to "My tickets", tickets_path, class: "nav-link" %>
+    </li>
+
+      <% if current_user.admin? %>
+
+      <li class="nav-item">
+        <%= link_to "Control panel", admin_path, class: "nav-link" %>
+      </li>
+
+      <% end %>
+    <% end %>
+  </ul>
+
+  <%= render "common/auth_info" %>
+</nav>
+

@@ -1,7 +1,15 @@
 <tr>
-  <td><%= railway_station.title %></td>
-  <td><%= link_to t("show"),    admin_railway_station_path(railway_station) %></td>
-  <td><%= link_to t("edit"),    edit_admin_railway_station_path(railway_station) %></td>
-  <td><%= link_to t("destroy"), admin_railway_station_path(railway_station), method: :delete,
-                  data: { confirm: t("confirm") } %></td>
+  <td class="align-middle text-center"><%= railway_station.title %></td>
+  <td class="text-right">
+    <div class="btn-group">
+      <%= link_to t("show"),    admin_railway_station_path(railway_station),
+                                class: "btn btn-secondary" %>
+      <%= link_to t("edit"),    edit_admin_railway_station_path(railway_station),
+                                class: "btn btn-secondary" %>
+      <%= link_to t("destroy"), admin_railway_station_path(railway_station),
+                                method: :delete,
+                                data: { confirm: t("confirm") },
+                                class: "btn btn-secondary" %>
+    </div>
+  </td>
 </tr>

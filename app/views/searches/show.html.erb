@@ -18,7 +18,7 @@
     </div>
 <% end %>
 
-<h2>Trains on this route:</h2>
+<h2>Trains on the route:</h2>
 
 <% if @search_results&.any? %>
 
@@ -59,6 +59,6 @@
 
 <% else %>
 
-  <p>No trains were assigned to this route</p>
+  <p class="no-items">No trains were assigned to this route</p>
 
 <% end %>

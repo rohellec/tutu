@@ -11,20 +11,21 @@
   <body>
     <%= render "common/header" %>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-2 control-panel">
-          <%= render "common/control_panel" %>
-        </div>
-        <div class="col-9">
-          <div class="row justify-content-center">
-            <%= yield %>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2 menu-panel">
+            <%= render "common/control_panel" %>
+          </div>
+          <div class="col-10 control-panel">
+            <div class="row justify-content-center">
+              <%= yield %>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-     <%= render "common/footer" %>
-
+    <%= render "common/footer" %>
   </body>
 </html>

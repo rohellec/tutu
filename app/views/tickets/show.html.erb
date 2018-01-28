@@ -1,27 +1,27 @@
-<h1>Ticket for train №<%= @ticket.train.number %></h1>
+<h1><%= t(".show_header", train: @ticket.train.number) %></h1>
 
 <p>
-  <strong>Passenger:</strong>
+  <strong><%= t(".passenger") %></strong>
   <%= @ticket.passenger %>
 </p>
 
 <p>
-  <strong>From:</strong>
+  <strong><%= t(".from") %>:</strong>
   <%= @ticket.base_station.title %>
 </p>
 
 <p>
-  <strong>To:</strong>
+  <strong><%= t(".to") %>:</strong>
   <%= @ticket.final_station.title %>
 </p>
 
 <p>
-  <strong>Departure:</strong>
+  <strong><%= t(".departure") %>:</strong>
   <%= @ticket.departure_time %>
 </p>
 
 <p>
-  <strong>Arrival:</strong>
+  <strong><%= t(".arrival") %>:</strong>
   <%= @ticket.arrival_time %>
 </p>
 

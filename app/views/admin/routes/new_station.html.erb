@@ -1,30 +1,33 @@
-<h1><%= t(".header", title: @route.title ) %></h1>
+<div class="col-5">
+  <h1><%= @route.title %></h1>
+  <h3><%= t(".header") %></h3>
 
-<%= form_with scope: :station, url: add_station_admin_route_path(@route), local: true do |form| %>
-  <div class="field">
-    <%= form.label :railway_station_id, t(".station") %>
-    <%= form.collection_select :railway_station_id, @stations, :id, :title,
-      prompt: t(".select_station") %>
-  </div>
+  <%= form_with scope: :station, url: add_station_admin_route_path(@route), local: true do |form| %>
+    <div class="form-group">
+      <%= form.label :railway_station_id, t(".station") %>
+      <%= form.collection_select :railway_station_id, @stations, :id, :title,
+                                 { prompt: t(".select_station") },
+                                 { class: "form-control custom-select" } %>
+    </div>
 
-  <div class="field">
-    <%= form.label :arrival_time , t(".arrival_time") %>
-    <%= form.time_field :arrival_time %>
-  </div>
+    <div class="form-group">
+      <%= form.label :arrival_time , t(".arrival_time") %>
+      <%= form.time_field :arrival_time, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :departure_time, t(".departure_time") %>
-    <%= form.time_field :departure_time %>
-  </div>
+    <div class="form-group">
+      <%= form.label :departure_time, t(".departure_time") %>
+      <%= form.time_field :departure_time, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :position, t(".position") %>
-    <%= form.number_field :position %>
-  </div>
+    <div class="form-group">
+      <%= form.label :position, t(".position") %>
+      <%= form.number_field :position, class: "form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= submit_tag t(".create") %>
-  </div>
-<% end %>
-
-<%= link_to t("back"), admin_route_path(@route) %>
+    <div class="btn-group">
+      <%= link_to t("back"), admin_route_path(@route), class: "btn btn-outline-primary" %>
+      <%= submit_tag t(".create"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

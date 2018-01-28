@@ -4,6 +4,27 @@ ru:
   back: "Назад"
   destroy: "Удалить"
   confirm: "Вы уверены?"
+  enter_title: "Введите название"
+  enter_name: "Введите имя"
+  tickets:
+    index:
+      index_header: "Билеты"
+      train: "Поезд"
+      passenger: "Пассажир"
+      base_station: "Начальная станция"
+      final_station: "Конечная станция"
+      departure: "Отправление"
+      arrival: "Прибытие"
+      no_tickets: "Не добавлено ни одного билета"
+    show:
+      account: "Аккаунт"
+      passenger: "Пассажир"
+      from: "Откуда"
+      to: "Куда"
+      departure: "Отправление"
+      arrival: "Прибытие"
+    new:
+      new_header: "Новый билет"
   admin:
     wagons:
       show:
@@ -100,7 +121,7 @@ ru:
         create: "Cоздать маршрут"
         update: "Обновить маршрут"
       new_station:
-        header: "Новая станция на маршруте %{title}"
+        header: "Новая станция"
         station: "Станция"
         arrival_time: "Время прибытия"
         departure_time: "Время отправления"
@@ -121,3 +142,32 @@ ru:
       form:
         create: "Создать станцию"
         update: "Обновить станцию"
+    tickets:
+      index:
+        index_header: "Билеты"
+        train: "Поезд"
+        passenger: "Пассажир"
+        base_station: "Начальная станция"
+        final_station: "Конечная станция"
+        departure: "Отправление"
+        arrival: "Прибытие"
+        no_tickets: "Не добавлено ни одного билета"
+        new_ticket: "Новый билет"
+      show:
+        account: "Аккаунт"
+        passenger: "Пассажир"
+        from: "Откуда"
+        to: "Куда"
+        departure: "Отправление"
+        arrival: "Прибытие"
+      new:
+        new_header: "Новый билет"
+      edit:
+        edit_header: "Редактирование билета"
+      form:
+        user: "Аккаунт"
+        create: "Создать билет"
+        update: "Обновить билет"
+        select_user: "Выберите пользователя"
+        select_train: "Выберите поезд"
+        select_station: "Выберите станцию"

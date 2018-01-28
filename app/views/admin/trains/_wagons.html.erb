@@ -1,6 +1,6 @@
 <% if wagons.any? %>
 
-  <table>
+  <table class="table table-striped table-hover table-center-cell">
     <thead>
       <tr>
         <th><%= t(".ordinal")     %></th>
@@ -21,6 +21,6 @@
 
 <% else %>
 
-  <p><%= t(".no_wagons") %></p>
+  <p class="no-items"><%= t(".no_wagons") %></p>
 
 <% end %>

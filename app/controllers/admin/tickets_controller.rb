@@ -6,6 +6,7 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def show
+    puts request.referer
   end
 
   def new

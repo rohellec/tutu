@@ -6,8 +6,16 @@
   <td><%= wagon.side_bottom_places %></td>
   <td><%= wagon.side_upper_places %></td>
   <td><%= wagon.seat_places %></td>
-  <td><%= link_to t('show'),    admin_wagon_path(wagon) %></td>
-  <td><%= link_to t('edit'),    edit_admin_wagon_path(wagon) %></td>
-  <td><%= link_to t('destroy'), admin_wagon_path(wagon), method: :delete,
-                  data: { confirm: t('confirm') } %></td>
+  <td>
+    <div class="btn-group">
+      <%= link_to t('show'),    admin_wagon_path(wagon),
+                                class: "btn btn-secondary" %>
+      <%= link_to t('edit'),    edit_admin_wagon_path(wagon),
+                                class: "btn btn-secondary" %>
+      <%= link_to t('destroy'), admin_wagon_path(wagon),
+                                method: :delete,
+                                data: { confirm: t('confirm') },
+                                class: "btn btn-secondary" %>
+    </div>
+  </td>
 </tr>

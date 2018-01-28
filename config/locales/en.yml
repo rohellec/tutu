@@ -4,6 +4,27 @@ en:
   back: "Back"
   destroy: "Destroy"
   confirm: "Are you sure?"
+  enter_title: "Enter title"
+  enter_name: "Enter name"
+  tickets:
+    index:
+      index_header: "Tickets"
+      train: "Train"
+      passenger: "Passenger"
+      base_station: "Base station"
+      final_station: "Final station"
+      departure: "Departure"
+      arrival: "Arrival"
+      no_tickets: "There are no tickets added"
+    show:
+      account: "Account"
+      passenger: "Passenger"
+      from: "From"
+      to: "To"
+      departure: "Departure"
+      arrival: "Arrival"
+    new:
+      new_header: "New ticket"
   admin:
     wagons:
       show:
@@ -100,7 +121,7 @@ en:
         create: "Create route"
         update: "Update route"
       new_station:
-        header: "New station on the route %{title}"
+        header: "New station"
         station: "Station"
         arrival_time: "Arrival time"
         departure_time: "Departure time"
@@ -121,3 +142,32 @@ en:
       form:
         create: "Create station"
         update: "Update station"
+    tickets:
+      index:
+        index_header: "Tickets"
+        train: "Train"
+        passenger: "Passenger"
+        base_station: "Base station"
+        final_station: "Final station"
+        departure: "Departure"
+        arrival: "Arrival"
+        no_tickets: "There are no tickets added"
+        new_ticket: "New ticket"
+      show:
+        account: "Account"
+        passenger: "Passenger"
+        from: "From"
+        to: "To"
+        departure: "Departure"
+        arrival: "Arrival"
+      new:
+        new_header: "New ticket"
+      edit:
+        edit_header: "Edit ticket"
+      form:
+        user: "Account"
+        create: "Create ticket"
+        update: "Update ticket"
+        select_user: "Choose account"
+        select_train: "Choose train"
+        select_station: "Choose station"

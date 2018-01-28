@@ -11,10 +11,12 @@
   <body>
     <%= render "common/header" %>
 
-    <div class="container">
-      <%= yield %>
-      <%= render "common/footer" %>
+    <div class="content">
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
 
+    <%= render "common/footer" %>
   </body>
 </html>

@@ -1,34 +1,38 @@
-<h1>Ticket for train №<%= @ticket.train.number %></h1>
+<div class="col">
+  <h1><%= t(".show_header", train: @ticket.train.number) %></h1>
 
-<p>
-  <strong>Account:</strong>
-  <%= @ticket.user.name %>
-</p>
+  <p>
+    <strong><%= t(".account") %>:</strong>
+    <%= @ticket.user.name %>
+  </p>
 
-<p>
-  <strong>Passenger:</strong>
-  <%= @ticket.passenger %>
-</p>
+  <p>
+    <strong><%= t(".passenger") %></strong>
+    <%= @ticket.passenger %>
+  </p>
 
-<p>
-  <strong>From:</strong>
-  <%= @ticket.base_station.title %>
-</p>
+  <p>
+    <strong><%= t(".from") %>:</strong>
+    <%= @ticket.base_station.title %>
+  </p>
 
-<p>
-  <strong>To:</strong>
-  <%= @ticket.final_station.title %>
-</p>
+  <p>
+    <strong><%= t(".to") %>:</strong>
+    <%= @ticket.final_station.title %>
+  </p>
 
-<p>
-  <strong>Departure:</strong>
-  <%= @ticket.departure_time %>
-</p>
+  <p>
+    <strong><%= t(".departure") %>:</strong>
+    <%= @ticket.departure_time %>
+  </p>
 
-<p>
-  <strong>Arrival:</strong>
-  <%= @ticket.arrival_time %>
-</p>
+  <p>
+    <strong><%= t(".arrival") %>:</strong>
+    <%= @ticket.arrival_time %>
+  </p>
 
-<%= link_to 'Back', search_path(base_id:  @ticket.base_station_id,
-                                final_id: @ticket.final_station_id) %>
+  <div class="btn-group">
+    <%= link_to t("back"), admin_tickets_path, class: "btn btn-outline-secondary" %>
+    <%= link_to t("edit"), edit_admin_ticket_path(@ticket), class: "btn btn-secondary" %>
+  </div>
+</div>

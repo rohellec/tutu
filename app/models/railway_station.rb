@@ -7,8 +7,21 @@ class RailwayStation < ApplicationRecord
   has_many :railway_stations_routes
   has_many :routes, through: :railway_stations_routes
 
+  validates :title, presence: true
+
   def update_position(route, position)
-    station_route(route)&.update(position: position)
+    return unless station_route(route)
+    @station_route.position = position
+    if @station_route.save
+      true
+    else
+      add_uniq_position_error
+      false
+    end
+  end
+
+  def delete_from(route)
+    station_route(route)&.delete
   end
 
   def position_in(route)
@@ -27,5 +40,11 @@ class RailwayStation < ApplicationRecord
 
   def station_route(route)
     @station_route ||= railway_stations_routes.find_by(route: route)
+  end
+
+  private
+
+  def add_uniq_position_error
+    errors.add :base, :uniq_position
   end
 end

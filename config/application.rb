@@ -16,5 +16,7 @@ module Tutu
     # -- all .rb files in that directory are automatically loaded.
 
     config.autoload_paths += %W[#{config.root}/app/models/wagons]
+
+    config.i18n.default_locale = :ru
   end
 end

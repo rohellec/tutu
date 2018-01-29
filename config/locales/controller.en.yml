@@ -1,0 +1,32 @@
+en:
+  sessions:
+    welcome: "Welcome"
+  admin:
+    wagons:
+      create:
+        notice: "Wagon was successfully created."
+      update:
+        notice: "Wagon was successfully updated."
+      destroy:
+        notice: "Wagon was successfully destroyed."
+    trains:
+      create:
+        notice: "Train was successfully created."
+      update:
+        notice: "Train was successfully updated."
+      destroy:
+        notice: "Train was successfully destroyed."
+    routes:
+      create:
+        notice: "Route was successfully created."
+      update:
+        notice: "Route was successfully updated."
+      destroy:
+        notice: "Route was successfully destroyed."
+    railway_stations:
+      create:
+        notice: "Railway station was successfully created."
+      update:
+        notice: "Railway station was successfully updated."
+      destroy:
+        notice: "Railway station was successfully destroyed."

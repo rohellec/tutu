@@ -1,0 +1,173 @@
+ru:
+  show: "Показать"
+  edit: "Редактировать"
+  back: "Назад"
+  destroy: "Удалить"
+  confirm: "Вы уверены?"
+  enter_title: "Введите название"
+  enter_name: "Введите имя"
+  tickets:
+    index:
+      index_header: "Билеты"
+      train: "Поезд"
+      passenger: "Пассажир"
+      base_station: "Начальная станция"
+      final_station: "Конечная станция"
+      departure: "Отправление"
+      arrival: "Прибытие"
+      no_tickets: "Не добавлено ни одного билета"
+    show:
+      account: "Аккаунт"
+      passenger: "Пассажир"
+      from: "Откуда"
+      to: "Куда"
+      departure: "Отправление"
+      arrival: "Прибытие"
+    new:
+      new_header: "Новый билет"
+  admin:
+    wagons:
+      show:
+        show_header: "Вагон №%{ordinal}"
+        train: "Поезд"
+        type: "Тип"
+        Sitting: "Сидячий"
+        Economy: "Плацкарт"
+        Coupe: "Купе"
+        Luxe: "СВ"
+      fields:
+        select_type: "Выберите тип"
+        create: "Создать вагон"
+        update: "Обновить вагон"
+        SittingWagon: "Сидячий"
+        EconomWagon: "Плацкарт"
+        CoupeWagon: "Купе"
+        LuxeWagon: "СВ"
+      new:
+        new_header: "Новый вагон"
+      edit:
+        edit_header: "Редактирование вагона"
+      types:
+        coupe_wagon:
+          bottom: "Нижние места"
+          upper: "Верхние места"
+        econom_wagon:
+          bottom: "Нижние места"
+          upper: "Верхние места"
+          side_bottom: "Нижние боковые места"
+          side_upper: "Верхние боковые места"
+        luxe_wagon:
+          bottom: "Нижние  места"
+        sitting_wagon:
+          seat: "Сидячие места"
+    trains:
+      index:
+        index_header: "Поезда"
+        number: "Номер"
+        no_trains: "Не добавлено ни одного поезда"
+        new_train: "Новый поезд"
+      show:
+        number: "Номер"
+        route: "Маршрут"
+        no_route: "Не назначен"
+        new_wagon: "Добавить вагон"
+        wagons: "Вагоны"
+      new:
+        new_header: "Новый поезд"
+      edit:
+        edit_header: "Редактирование поезда"
+      form:
+        create: "Cоздать поезд"
+        update: "Обновить поезд"
+        head: "С головы"
+        tail: "С хвоста"
+        select_route: "Выберите маршрут"
+      wagon:
+        Sitting: "Сидячий"
+        Economy: "Плацкарт"
+        Coupe: "Купе"
+        Luxe: "СВ"
+      wagons:
+        ordinal: "Позиция"
+        type: "Тип"
+        bottom: "Нижние"
+        upper: "Верхние"
+        side_bottom: "Нижние боковые"
+        side_upper: "Верхние боковые"
+        seat: "Сидячие места"
+        no_wagons: "Не добавлено ни одного вагона"
+    routes:
+      index:
+        index_header: "Маршруты"
+        title: "Название"
+        no_routes: "Не добавлено ни одного маршрута"
+        new_route: "Новый маршрут"
+      show:
+        title: "Название"
+        stations: "Станции"
+        arrival: "Прибытие"
+        departure: "Отправление"
+        position: "Позиция"
+        update: "Обновить"
+        no_stations: "На этом маршруте пока нет станций"
+        new_station: "Добавить станцию"
+        trains: "Поезда"
+        no_trains: "На этом маршрут не назначен ни один поезд"
+      new:
+        new_header: "Новый маршрут"
+      edit:
+        edit_header: "Редактирование маршрута"
+      form:
+        create: "Cоздать маршрут"
+        update: "Обновить маршрут"
+      new_station:
+        header: "Новая станция"
+        station: "Станция"
+        arrival_time: "Время прибытия"
+        departure_time: "Время отправления"
+        position: "Позиция"
+        create: "Добавить"
+    railway_stations:
+      index:
+        index_header: "Станции"
+        title: "Название"
+        no_stations: "Не добавлено ни одной станции"
+        new_station: "Новая станция"
+      show:
+        title: "Название"
+      new:
+        new_header: "Новая станция"
+      edit:
+        edit_header: "Редактирование станции"
+      form:
+        create: "Создать станцию"
+        update: "Обновить станцию"
+    tickets:
+      index:
+        index_header: "Билеты"
+        train: "Поезд"
+        passenger: "Пассажир"
+        base_station: "Начальная станция"
+        final_station: "Конечная станция"
+        departure: "Отправление"
+        arrival: "Прибытие"
+        no_tickets: "Не добавлено ни одного билета"
+        new_ticket: "Новый билет"
+      show:
+        account: "Аккаунт"
+        passenger: "Пассажир"
+        from: "Откуда"
+        to: "Куда"
+        departure: "Отправление"
+        arrival: "Прибытие"
+      new:
+        new_header: "Новый билет"
+      edit:
+        edit_header: "Редактирование билета"
+      form:
+        user: "Аккаунт"
+        create: "Создать билет"
+        update: "Обновить билет"
+        select_user: "Выберите пользователя"
+        select_train: "Выберите поезд"
+        select_station: "Выберите станцию"

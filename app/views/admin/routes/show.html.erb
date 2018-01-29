@@ -1,33 +1,47 @@
-<p>
-  <strong>Title:</strong>
-  <%= @route.title %>
-</p>
+<div class="col">
+  <h1><%= t(".show-header") %></h3>
 
-<p>
-  <strong>Stations:</strong>
+  <div class="row">
+    <div class="col-2 text-left"><b><%= t(".title") %>:</b></div>
+    <div class="col-2 text-left"><%= @route.title %></div>
+  </div>
+
+  <h3><%= t(".stations") %></h3>
+
+  <%= render("common/errors", resource: @railway_station) if @railway_station %>
 
   <% if @route.railway_stations.any? %>
 
-    <table>
+    <table class="table table-striped table-hover table-center-cell">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Arrival</th>
-          <th>Departure</th>
-          <th>Position</th>
+          <th><%= t(".title")     %></th>
+          <th><%= t(".arrival")   %></th>
+          <th><%= t(".departure") %></th>
+          <th><%= t(".position")  %></th>
         </tr>
       </thead>
       <tbody>
         <% @route.railway_stations.route_ordered.each do |station| %>
           <tr>
-            <td><%= station.title %></td>
-            <td><%= station.arrival_time_in(@route) %></td>
-            <td><%= station.departure_time_in(@route) %></td>
+            <td class="cell-17"><%= station.title %></td>
+            <td class="cell-17"><%= station.arrival_time_in(@route) %></td>
+            <td class="cell-17"><%= station.departure_time_in(@route) %></td>
             <td>
-              <%= form_tag update_position_admin_station(station), method: :patch do %>
-                <%= number_field_tag :position, station.position_in(@route) %>
+              <%= form_tag update_position_admin_railway_station_path(station),
+                           method: :patch,
+                           class: "form-inline my-lg-0 justify-content-end mr-sm-3" do %>
+
+                <%= number_field_tag :position, station.position_in(@route),
+                                     class: "form-control mr-sm-2" %>
+
                 <%= hidden_field_tag :route_id, @route.id %>
-                <%= submit_tag "Update" %>
+
+                <%= submit_tag t(".update"), class: "btn btn-table-update my-sm-0 mr-sm-2" %>
+
+                <%= link_to t("destroy"), delete_station_admin_route_path(@route, station),
+                                          method: :delete,
+                                          class: "btn btn-outline-danger my-sm-0" %>
               <% end %>
             </td>
           </tr>
@@ -38,32 +52,34 @@
 
   <% else %>
 
-    No stations were added to this route
+    <p class="no-items"><%= t(".no_stations") %></p>
 
   <% end %>
-</p>
 
-<p>
-  <%= link_to "Add station", new_station_admin_route_path(@route) %>
-</p>
+  <div class="row no-gutters justify-content-between">
+    <%= link_to t(".new_station"), new_station_admin_route_path(@route),
+                                   class: "btn btn-primary" %>
+    <div class="btn-group">
+      <%= link_to t("back"), admin_routes_path, class: "btn btn-outline-secondary" %>
+      <%= link_to t("edit"), edit_admin_route_path(@route), class: "btn btn-secondary" %>
+    </div>
+  </div>
 
-<p>
-  <strong>Trains on this route:</strong>
+  <h3><%= t(".trains") %>:</h3>
 
   <% if @route.trains.any? %>
 
-    <ul>
+    <ul class="btn-toolbar">
       <% @route.trains.each do |train| %>
-        <li><%= link_to "№#{train.number}", admin_train_path(train) %></li>
+        <li>
+          <%= link_to "№#{train.number}", admin_train_path(train),
+                                          class: "btn btn-secondary mr-2" %>
+        </li>
       <% end %>
     </ul>
 
   <% else %>
 
-    No trains were assigned to this route
+    <p class="no-items"><%= t(".no_trains") %></p>
 
   <% end %>
-</p>
-
-<%= link_to 'Edit', edit_admin_route_path(@route) %> |
-<%= link_to 'Back', admin_routes_path %>

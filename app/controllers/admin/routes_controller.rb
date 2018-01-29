@@ -1,5 +1,6 @@
 class Admin::RoutesController < Admin::BaseController
-  before_action :set_route, only: [:show, :edit, :update, :destroy, :new_station, :add_station]
+  before_action :set_route, only: [:show, :edit, :update, :destroy, :new_station, :add_station,
+                                   :delete_station]
 
   def index
     @routes = Route.all
@@ -18,7 +19,7 @@ class Admin::RoutesController < Admin::BaseController
   def create
     @route = Route.new(route_params)
     if @route.save
-      redirect_to admin_route_path(@route), notice: 'Route was successfully created.'
+      redirect_to admin_route_path(@route), notice: t(".notice")
     else
       render :new
     end
@@ -26,7 +27,7 @@ class Admin::RoutesController < Admin::BaseController
 
   def update
     if @route.update(route_params)
-      redirect_to admin_route_path(@route), notice: 'Route was successfully updated.'
+      redirect_to admin_route_path(@route), notice: t(".notice")
     else
       render :edit
     end
@@ -34,7 +35,7 @@ class Admin::RoutesController < Admin::BaseController
 
   def destroy
     @route.destroy
-    redirect_to admin_routes_path, notice: 'Route was successfully destroyed.'
+    redirect_to admin_routes_path, notice: t(".notice")
   end
 
   def new_station
@@ -43,6 +44,12 @@ class Admin::RoutesController < Admin::BaseController
 
   def add_station
     @route.add_station(route_station_params)
+    redirect_to admin_route_path(@route)
+  end
+
+  def delete_station
+    railway_station = RailwayStation.find(params[:station_id])
+    railway_station.delete_from(@route)
     redirect_to admin_route_path(@route)
   end
 

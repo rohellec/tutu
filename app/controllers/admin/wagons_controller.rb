@@ -1,10 +1,7 @@
 class Admin::WagonsController < Admin::BaseController
-  before_action :set_train, only: [:index, :new, :create]
+  before_action :add_ordinal_to_wagon_params, only: :update
+  before_action :set_train, only: [:new, :create]
   before_action :set_wagon, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @wagons = @train.wagons
-  end
 
   def show
   end
@@ -18,9 +15,9 @@ class Admin::WagonsController < Admin::BaseController
   end
 
   def create
-    @wagon = @train.wagons.new(wagon_params)
+    @wagon = @train.wagons.build(wagon_params)
     if @wagon.save
-      redirect_to admin_train_path(@train), notice: 'Wagon was successfully created.'
+      redirect_to admin_train_path(@train), notice: t(".notice")
     else
       @wagon = @wagon.becomes(Wagon)
       render :new
@@ -30,7 +27,7 @@ class Admin::WagonsController < Admin::BaseController
   def update
     @wagon = @wagon.becomes(wagon_params[:type].constantize)
     if @wagon.update(wagon_params)
-      redirect_to admin_wagon_path(@wagon), notice: 'Wagon was successfully updated.'
+      redirect_to admin_wagon_path(@wagon), notice: t(".notice")
     else
       @wagon = @wagon.becomes(Wagon)
       render :edit
@@ -39,7 +36,7 @@ class Admin::WagonsController < Admin::BaseController
 
   def destroy
     @wagon.destroy
-    redirect_to admin_train_wagons_url(@wagon.train), notice: 'Wagon was successfully destroyed.'
+    redirect_to admin_train_path(@wagon.train), notice: t(".notice")
   end
 
   private
@@ -53,7 +50,12 @@ class Admin::WagonsController < Admin::BaseController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:type, :bottom_places, :upper_places, :seat_places,
-                                  :side_bottom_places, :side_upper_places)
+    @wagon_params ||= params.require(:wagon)
+                            .permit(:type, :bottom_places, :upper_places, :seat_places,
+                                    :side_bottom_places, :side_upper_places)
+  end
+
+  def add_ordinal_to_wagon_params
+    wagon_params.merge!(ordinal: params[:wagon][:ordinal])
   end
 end

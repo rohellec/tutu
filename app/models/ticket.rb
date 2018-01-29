@@ -4,6 +4,7 @@ class Ticket < ApplicationRecord
   belongs_to :train
   belongs_to :user
 
+  validates :passenger, presence: true
   validate :valid_route
 
   def arrival_time

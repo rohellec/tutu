@@ -1,0 +1,9 @@
+<p>Hello, <%= @user.name %>!</p>
+
+<p>
+  You've bought the ticket for passenger <%= @ticket.passenger %>
+  on the route "<%= @ticket.route_name %>".<br>
+  Detailed information about the ticket is <%= link_to t("here"), @ticket %>
+</p>
+
+<p>All information about your tickets can be found <%= link_to t("here"), tickets_url %></p>

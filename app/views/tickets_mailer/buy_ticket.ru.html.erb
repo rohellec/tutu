@@ -1,0 +1,9 @@
+<p>Привет, <%= @user.name %>!</p>
+
+<p>
+  Вы купили билет для пассажира <%= @ticket.passenger %>
+  по маршруту "<%= @ticket.route_name %>".<br>
+  Посмотреть билет вы можете <%= link_to t("here"), @ticket %>
+</p>
+
+<p>Остальные доступные билеты находятся <%= link_to t("here"), tickets_url %></p>

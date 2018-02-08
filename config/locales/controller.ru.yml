@@ -1,6 +1,11 @@
 ru:
   sessions:
     welcome: "Привет"
+  tickets:
+    create:
+      notice: "Билет был успешно создан."
+    destroy:
+      notice: "Билет был успешно удалён."
   admin:
     wagons:
       create:
@@ -16,6 +21,13 @@ ru:
         notice: "Поезд был успешно обновлён."
       destroy:
         notice: "Поезд был успешно удалён."
+    tickets:
+      create:
+        notice: "Билет был успешно создан."
+      update:
+        notice: "Билет был успешно обновлён."
+      destroy:
+        notice: "Билет был успешно удалён."
     routes:
       create:
         notice: "Маршрут был успешно создан."

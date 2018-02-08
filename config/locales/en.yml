@@ -6,6 +6,7 @@ en:
   confirm: "Are you sure?"
   enter_title: "Enter title"
   enter_name: "Enter name"
+  here: "here"
   tickets:
     index:
       index_header: "Tickets"

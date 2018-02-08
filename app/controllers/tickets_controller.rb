@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
 
   def create
     if @ticket.save
-      redirect_to @ticket, notice: 'Ticket was successfully created.'
+      redirect_to @ticket, notice: t('.notice')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to tickets_path, notice: 'Ticket was successfully destroyed.'
+    redirect_to tickets_path, notice: t('.notice')
   end
 
   private

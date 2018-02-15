@@ -6,6 +6,7 @@ ru:
   confirm: "Вы уверены?"
   enter_title: "Введите название"
   enter_name: "Введите имя"
+  here: "здесь"
   tickets:
     index:
       index_header: "Билеты"

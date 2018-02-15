@@ -1,0 +1,10 @@
+<p>Hello, <%= @user.name %>!</p>
+
+<p>
+  Ticket for passenger <%= @ticket.passenger %> on the route "<%= @ticket.route_name %>"
+  has been destroyed.
+</p>
+
+<p>
+  All information about other tickets can be found <%= link_to t("here"), tickets_url %>
+<p>

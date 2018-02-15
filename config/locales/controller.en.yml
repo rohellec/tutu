@@ -1,6 +1,11 @@
 en:
   sessions:
     welcome: "Welcome"
+  tickets:
+    create:
+      notice: "Ticket was successfully created."
+    destroy:
+      notice: "Ticket was successfully destroyed."
   admin:
     wagons:
       create:
@@ -16,6 +21,13 @@ en:
         notice: "Train was successfully updated."
       destroy:
         notice: "Train was successfully destroyed."
+    tickets:
+      create:
+        notice: "Ticket was successfully created."
+      update:
+        notice: "Ticket was successfully updated."
+      destroy:
+        notice: "Ticket was successfully destroyed."
     routes:
       create:
         notice: "Route was successfully created."

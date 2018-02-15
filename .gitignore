@@ -15,9 +15,9 @@
 
 # Ignore special env manager's files
 .ruby-gemset
+.ruby-version
 
 # Ignore configuration files
-config/database.yml
 config/private_pub.yml
 
 # Ignore uploaded files

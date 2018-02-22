@@ -3,6 +3,6 @@ class CoupeWagon < Wagon
   validates :upper_places,  presence: true
 
   def display_name
-    "Coupe"
+    "coupe"
   end
 end

@@ -1,12 +1,16 @@
 function inlineEditResource(resource) {
-  $(`a.edit_${resource}`).click(function(link) {
+  var editUrl = 'a.edit_' + resource;
+  $(editUrl).click(function(link) {
     link.preventDefault();
-    let current = $(this);
+    var current = $(this);
 
-    let resourceId = current.data(`${camelize(resource)}Id`);
-    let title = $(`#${resource}_title_${resourceId}`);
-    let form  = $(`#edit_${resource}_${resourceId}`);
-    let cell = form.parent('td');
+    var resourceId = current.data(camelize(resource) + 'Id');
+    var titleId = '#' + resource + '_title_' + resourceId;
+    var formId  = '#edit_' + resource + '_'  + resourceId;
+
+    var title = $(titleId);
+    var form  = $(formId);
+    var cell = form.parent('td');
 
     if (!current.hasClass('cancel')) {
       current.text(I18n.cancel);
@@ -34,8 +38,8 @@ function camelize(text) {
 }
 
 function displayByAttr(selector, attr, value) {
-  $(selector).each((index, elem) => {
-    let domObject = $(elem);
+  $(selector).each(function(index, elem) {
+    var domObject = $(elem);
     if (domObject.data(attr).indexOf(value) > -1)
       domObject.show();
     else

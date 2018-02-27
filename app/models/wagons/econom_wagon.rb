@@ -5,6 +5,6 @@ class EconomWagon < Wagon
   validates :side_upper_places,  presence: true
 
   def display_name
-    "Economy"
+    "economy"
   end
 end

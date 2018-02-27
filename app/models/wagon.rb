@@ -1,17 +1,17 @@
 class Wagon < ApplicationRecord
-  TYPES = %w[
-    SittingWagon
-    EconomWagon
-    CoupeWagon
-    LuxeWagon
-  ].freeze
+  TYPES = {
+    sitting: "SittingWagon",
+    econom:  "EconomWagon",
+    coupe:   "CoupeWagon",
+    luxe:    "LuxeWagon"
+  }.freeze
 
   scope :sorted, ->(asc) { order(ordinal: (asc ? :asc : :desc)) }
 
   belongs_to :train
 
   validates :ordinal, uniqueness: { scope: :train_id }
-  validates :type, inclusion: { in: TYPES }
+  validates :type,    inclusion:  { in: TYPES.values }
 
   before_save :set_ordinal, if: :train_id_changed?
 

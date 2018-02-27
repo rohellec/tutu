@@ -1,11 +1,17 @@
 <tr>
-  <td class="cell-17"><%= route.title %></td>
+  <td class="cell-17">
+    <div id="route_title_<%= route.id %>">
+      <%= route.title %>
+    </div>
+    <%= render "form_inline", route: route, hidden: true %>
+  </td>
+  <td class="cell-45"></td>
   <td>
     <div class="btn-group">
       <%= link_to t("show"),    admin_route_path(route),
                                 class: "btn btn-secondary" %>
-      <%= link_to t("edit"),    edit_admin_route_path(route),
-                                class: "btn btn-secondary" %>
+      <%= link_to t("edit"),    "", data: { route_id: route.id },
+                                class: "btn btn-secondary edit_route" %>
       <%= link_to t("destroy"), admin_route_path(route), method: :delete,
                                 data: { confirm: t("confirm") },
                                 class: "btn btn-secondary" %>

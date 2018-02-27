@@ -3,9 +3,13 @@
   <head>
     <title>Tutu - admin</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', params[:controller],
+                               'data-turbolinks-track': 'reload' %>
+
+    <script>
+      window.I18n = <%= I18n.t(".").to_json.html_safe %>
+    </script>
   </head>
 
   <body>

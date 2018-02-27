@@ -1,17 +1,17 @@
 <%= form_for [:admin, train] do |form| %>
   <%= render "common/errors", resource: train %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :number %>
     <%= form.text_field :number %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :route_id %>
     <%= form.collection_select :route_id, Route.all, :id, :title, prompt: t(".select_route") %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :head_direction %>
 
     <%= form.radio_button :head_direction, true %>
